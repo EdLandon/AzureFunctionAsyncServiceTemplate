@@ -9,6 +9,15 @@ This service template targets Azure HTTP-triggered functions for request ingress
 5. Capture and handling of transient exceptions and non-transient exceptions. Transient exceptions propogated up to the service bus for retry; non-transient exceptions explicity dead-lettered.
 6. Selection of appropriate non-default serverless function bindings in order to have full access to the underlying service bus - for explicit dead-lettering and also access to the message header, not just the payload.
 
+# Inbox/Outbox Async Service Base Pattern
+...
+
+# Event Orchestration
+...
+
+# Event Nomenclature - Fully-qualified Event Name and Event Short Name
+...
+
 # Dependencies
 - Azure functions runtime version ?
 - .Net 6.
@@ -44,14 +53,3 @@ Then, referring to the settings in the above config file, create the following:
 ![alt text](https://github.com/EdLandon/DocMedia/blob/main/AzureFunctionAsyncServiceTemplate/LocalPrivatePublicMessages.png)
 
 This analogy - between the state and behaviour within a class and the same within an enterprise - is useful. A class contains variables and behaviour and an enterprise contains messages and behaviour (Services). Functions within a class represent services within the enterprise class. Variables within a class are analagous with messages within the enterprise. Just as a class of code has local, private, public variables, so does an enterprise comprise local, private and public events. Local events are used within the bounds of a single service - eg for offloading and resiliency ("temporal decoupling"). Private events are messages exchanged between services within the enterprise. Public messages are messages sent outside of the enterprise.
-
-# Inbox/Outbox Async Service Base Pattern
-...
-
-# Event Orchestration
-...
-
-# Event Nomenclature - Fully-qualified Event Name and Event Short Name
-...
-
-
