@@ -14,7 +14,7 @@ Other technical features include:
 3. Base classes implementing GoF template method pattern for processing ingress requests (http) and queue processing.
 4. Transmitting and enforcing use of the FQEN and event short name. Populating the command/event "subject" property - useful for viewing in Azure Service Bus Event Explorer.
 
-I am a "hands-on" development manager and this represents the patterns and practices I devised and enforced in my second project overseeing the implementatino of an event-based architecture.  I've not been a dev for some years now, so pls forgive any sub-optimal c# details. The objective of this is governance - application and enforcement of distilled patterns and practices rather than coding minutae.
+I am a "hands-on" development manager and this represents the patterns and practices I devised and enforced in my second project overseeing the implementatino of an event-based architecture.  I've not been a dev for some years now, so pls forgive any sub-optimal c# details. The objective of this is governance rather than coding minutae.
 
 # Messages, Commands, Events
 - Messages sent to queues / subscriptions.
