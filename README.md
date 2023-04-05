@@ -1,4 +1,4 @@
-# AzureFunctionAsyncServiceTemplate
+# Overview
 A template for creating async services using Azure serverless functions and c# .NET. It is a queue rather than log-based implementation for buiding asynchronous services.
 
 This service template targets Azure HTTP-triggered functions for request ingress and Azure service bus queues and topics for async message processing. It includes a number of patterns:
@@ -15,6 +15,8 @@ Other technical features include:
 4. Transmitting and enforcing use of the FQEN and event short name. Populating the command/event "subject" property - useful for viewing in Azure Service Bus Event Explorer.
 
 I am a "hands-on" development manager and this represents the patterns and practices I devised and enforced in my second project overseeing the implementatino of an event-based architecture.  I've not been a dev for some years now, so pls forgive any sub-optimal c# details. The objective of this is governance - application and enforcement of distilled patterns and practices rather than coding minutae.
+
+## Test
 
 # Definitions: Messages, Commands, Events
 - Messages sent to queues / subscriptions.
