@@ -45,7 +45,7 @@ Start by stepping through the template itself in Visual Studio.
 
 ![alt text](https://github.com/EdLandon/DocMedia/blob/main/AzureFunctionAsyncServiceTemplate/appsettings.local.json.png)
 
-Then, referring to the settings in the above config file, create the following in your local azure account.
+There is an inbox queue and outbox queue (topic) for this service. Then there are the config enries for the two requests supported by this service - apples and oranges.
 
 2. Create service inbox queue "sbqService1_inbox_fruitToDo".
 3. Create service outbox topic.
