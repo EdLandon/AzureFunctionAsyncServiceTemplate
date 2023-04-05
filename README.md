@@ -9,11 +9,19 @@ This service template targets Azure HTTP-triggered functions for request ingress
 5. Capture and handling of transient exceptions and non-transient exceptions. Transient exceptions propogated up to the service bus for retry; non-transient exceptions explicity dead-lettered.
 6. Selection of appropriate non-default serverless function bindings in order to have full access to the underlying service bus - for explicit dead-lettering and also access to the message header, not just the payload.
 
+# Dependencies
+- Azure functions runtime version ?
+- .Net 6.
+- Integrated, not isolated.
+
 # To Run this Template
 1. Create service bus resource.
 2. Create queue ....
 3. Create topic ....
 4. Create subscription ....
+
+# Governance
+
 
 # Definitions: Messages, Commands, Events
 - Messages sent to queues / subscriptions.
@@ -24,7 +32,7 @@ This service template targets Azure HTTP-triggered functions for request ingress
 - Low-level CRUD events tend to carry less business meaning and ideally do not belong on the service bus – CDC is ideal for these.
 
 # Definitions: Local, Private, Public Events
-image.png
+https://github.com/EdLandon/DocMedia/blob/main/AzureFunctionAsyncServiceTemplate/LocalPrivatePublicMessages.png
 
 
 # Inbox/Outbox Async Service Base Pattern
