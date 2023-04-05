@@ -16,7 +16,7 @@ Other technical features include:
 
 I am a "hands-on" development manager and this represents the patterns and practices I devised and enforced in my second project overseeing the implementatino of an event-based architecture.  I've not been a dev for some years now, so pls forgive any sub-optimal c# details. The objective of this is governance - application and enforcement of distilled patterns and practices rather than coding minutae.
 
-# Definitions: Messages, Commands, Events
+# Messages, Commands, Events
 - Messages sent to queues / subscriptions.
 - Commands instructions to do something – generally to queues – P2P.
 - Events notify that something has been done – generally to topics – P2MP.
@@ -24,7 +24,7 @@ I am a "hands-on" development manager and this represents the patterns and pract
 - Events should represent the state change of a business process and described in business terms – similar to the distinction between BDD and TDD.
 - Low-level CRUD events tend to carry less business meaning and ideally do not belong on the service bus – CDC is ideal for these.
 
-# Definitions: Local, Private, Public Events
+# Local, Private, Public Events
 ![alt text](https://github.com/EdLandon/DocMedia/blob/main/AzureFunctionAsyncServiceTemplate/LocalPrivatePublicMessages.png)
 
 This analogy - between the state and behaviour within a class and the same within an enterprise - is useful. A class contains variables and behaviour and an enterprise contains messages and behaviour (Services). Functions within a class represent services within the enterprise class. Variables within a class are analagous with messages within the enterprise. Just as a class of code has local, private, public variables, so does an enterprise comprise local, private and public events. Local events are used within the bounds of a single service - eg for offloading and resiliency ("temporal decoupling"). Private events are messages exchanged between services within the enterprise. Public messages are messages sent outside of the enterprise.
