@@ -32,7 +32,7 @@ This service template targets Azure HTTP-triggered functions for request ingress
 - Low-level CRUD events tend to carry less business meaning and ideally do not belong on the service bus – CDC is ideal for these.
 
 # Definitions: Local, Private, Public Events
-https://github.com/EdLandon/DocMedia/blob/main/AzureFunctionAsyncServiceTemplate/LocalPrivatePublicMessages.png
+![alt text](https://github.com/EdLandon/DocMedia/blob/main/AzureFunctionAsyncServiceTemplate/LocalPrivatePublicMessages.png)
 
 
 # Inbox/Outbox Async Service Base Pattern
