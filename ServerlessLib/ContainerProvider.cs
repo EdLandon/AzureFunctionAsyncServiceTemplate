@@ -1,6 +1,4 @@
-﻿
-
-namespace ServerlessLib
+﻿namespace ServerlessLib
 {
     public static class ContainerProvider
     {

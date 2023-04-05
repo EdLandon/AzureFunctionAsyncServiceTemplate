@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ServerlessLib
+﻿namespace ServerlessLib
 {
-	[AttributeUsage(AttributeTargets.Method, Inherited = false, AllowMultiple = true)]
+    [AttributeUsage(AttributeTargets.Method, Inherited = false, AllowMultiple = true)]
 	public class FuncDocAttribute : Attribute
 	{
 		public FuncDocAttribute(string domain, string service, string evnt, string version, Type eventContract, string operation) {

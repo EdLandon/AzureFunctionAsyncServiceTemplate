@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using System.Runtime.CompilerServices;
 using System.Text.Json;
 
 namespace ServerlessLib
@@ -52,7 +51,6 @@ namespace ServerlessLib
 
             _eventShortName = parts[3];
         }
-
         public void DeserialiseRequest()
 		{
 			string request = null;
