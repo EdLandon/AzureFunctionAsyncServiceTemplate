@@ -71,7 +71,7 @@ There is an inbox queue and outbox queue (topic) for this service. Then there ar
 
 # Extension points - how to apply this to a real service
 
-The code here comprises both the service project and the shared lib project. This code should be implemented as a visual studio project template, in which case the new project will render a visual studio solution containing just a single project, the service. The serverlessLib shared class library should be added as a reference, added as a nuget package.
+The code here comprises both the service project and the shared lib project. This code should be implemented as a visual studio project template, in which case the new project will render a visual studio solution containing just a single project, the service. The serverlessLib shared class library whould be added as a reference, via a nuget package.
 
 ![alt text](https://github.com/EdLandon/DocMedia/blob/main/AzureFunctionAsyncServiceTemplate/SolutionExplorer.png)
 
