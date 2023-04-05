@@ -1,5 +1,5 @@
 # AzureFunctionAsyncServiceTemplate
-A template for creating async services using Azure serverless functions. It is a queue rather than log-based implementation for buiding asynchronous services.
+A template for creating async services using Azure serverless functions and c# .NET. It is a queue rather than log-based implementation for buiding asynchronous services.
 
 This service template targets Azure HTTP-triggered functions for request ingress and Azure service bus queues and topics for async message processing. It includes a number of patterns:
 1. The inbox/outbox service base pattern. This is a personal pattern and so is not in the public domain.
@@ -7,7 +7,12 @@ This service template targets Azure HTTP-triggered functions for request ingress
 3. An understanding of Local, Private, Public messages.
 4. Use of a fully-qualified event name (FQEN) and event short name.
 5. Capture and handling of transient exceptions and non-transient exceptions. Transient exceptions propogated up to the service bus for retry; non-transient exceptions explicity dead-lettered.
-6. Selection of appropriate non-default serverless function bindings in order to have full access to the underlying service bus - for explicit dead-lettering and also access to the message header, not just the payload.
+
+Other technical features include:
+1. Selection of appropriate non-default serverless function bindings in order to have full access to the underlying service bus - for explicit dead-lettering and also access to the message header, not just the payload.
+2. Use of custom IoC container (Autofac) for using "named registrations", which is a big feature missing from the built in .NET container.
+3. Base classes implementing GoF template method pattern for processing ingress requests (http) and queue processing.
+4. Transmitting and enforcing use of the FQEN and event short name. Populating the command/event "subject" property - useful for viewing in Azure Service Bus Event Explorer.
 
 # Definitions: Messages, Commands, Events
 - Messages sent to queues / subscriptions.
@@ -53,4 +58,5 @@ There is an inbox queue and outbox queue (topic) for this service. Then there ar
 5. Running by default on localhost:7046. See http function URIs: 
     "http://localhost:7046/api/HTTPApplesFuncRun"
     "http://localhost:7046/api/HTTPOrangesFuncRun" in the test web age index.html in the root of the project.
+6. Fire-up the test harness web page or use postman to send a request for apples. Put a breakpoint inside of (1) the applles func and then (2) the queue processing func.
 
