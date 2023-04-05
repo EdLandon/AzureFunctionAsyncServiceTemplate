@@ -16,8 +16,6 @@ Other technical features include:
 
 I am a "hands-on" development manager and this represents the patterns and practices I devised and enforced in my second project overseeing the implementatino of an event-based architecture.  I've not been a dev for some years now, so pls forgive any sub-optimal c# details. The objective of this is governance - application and enforcement of distilled patterns and practices rather than coding minutae.
 
-## Test
-
 # Definitions: Messages, Commands, Events
 - Messages sent to queues / subscriptions.
 - Commands instructions to do something – generally to queues – P2P.
