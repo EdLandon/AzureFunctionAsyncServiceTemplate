@@ -1,5 +1,5 @@
 # AzureFunctionAsyncServiceTemplate
-A template for creating async services using Azure serverless functions.
+A template for creating async services using Azure serverless functions. It is a queue rather than log-based implementation for buiding asynchronous services.
 
 This service template targets Azure HTTP-triggered functions for request ingress and Azure service bus queues and topics for async message processing. It includes a number of patterns:
 1. The inbox/outbox service base pattern. This is a personal pattern and so is not in the public domain.
@@ -15,13 +15,24 @@ This service template targets Azure HTTP-triggered functions for request ingress
 3. Create topic ....
 4. Create subscription ....
 
-# Local, Private, Public Messages
+# Definitions: Messages, Commands, Events
+- Messages sent to queues / subscriptions.
+- Commands instructions to do something – generally to queues – P2P.
+- Events notify that something has been done – generally to topics – P2MP.
+- Claim-check pattern for large payloads in order to avoid resource quota issues affecting performance and, in extreme situations, shutting down queues.
+- Events should represent the state change of a business process and described in business terms – similar to the distinction between BDD and TDD.
+- Low-level CRUD events tend to carry less business meaning and ideally do not belong on the service bus – CDC is ideal for these.
 
+# Definitions: Local, Private, Public Events
+image.png
 
 
 # Inbox/Outbox Async Service Base Pattern
 
 
+# Event Orchestration
+
 
 # Event Nomenclature - Fully-qualified Event Name and Event Short Name
+
 
