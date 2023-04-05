@@ -1,0 +1,12 @@
+C:\Users\EdwardL.MBL_NT\Documents\repos\FunctionApp3\FunctionApp3\ServerlessLib\bin\Debug\net6.0\ServerlessLib.deps.json
+C:\Users\EdwardL.MBL_NT\Documents\repos\FunctionApp3\FunctionApp3\ServerlessLib\bin\Debug\net6.0\ServerlessLib.dll
+C:\Users\EdwardL.MBL_NT\Documents\repos\FunctionApp3\FunctionApp3\ServerlessLib\bin\Debug\net6.0\ServerlessLib.pdb
+C:\Users\EdwardL.MBL_NT\Documents\repos\FunctionApp3\FunctionApp3\ServerlessLib\obj\Debug\net6.0\ServerlessLib.csproj.AssemblyReference.cache
+C:\Users\EdwardL.MBL_NT\Documents\repos\FunctionApp3\FunctionApp3\ServerlessLib\obj\Debug\net6.0\ServerlessLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\EdwardL.MBL_NT\Documents\repos\FunctionApp3\FunctionApp3\ServerlessLib\obj\Debug\net6.0\ServerlessLib.AssemblyInfoInputs.cache
+C:\Users\EdwardL.MBL_NT\Documents\repos\FunctionApp3\FunctionApp3\ServerlessLib\obj\Debug\net6.0\ServerlessLib.AssemblyInfo.cs
+C:\Users\EdwardL.MBL_NT\Documents\repos\FunctionApp3\FunctionApp3\ServerlessLib\obj\Debug\net6.0\ServerlessLib.csproj.CoreCompileInputs.cache
+C:\Users\EdwardL.MBL_NT\Documents\repos\FunctionApp3\FunctionApp3\ServerlessLib\obj\Debug\net6.0\ServerlessLib.dll
+C:\Users\EdwardL.MBL_NT\Documents\repos\FunctionApp3\FunctionApp3\ServerlessLib\obj\Debug\net6.0\refint\ServerlessLib.dll
+C:\Users\EdwardL.MBL_NT\Documents\repos\FunctionApp3\FunctionApp3\ServerlessLib\obj\Debug\net6.0\ServerlessLib.pdb
+C:\Users\EdwardL.MBL_NT\Documents\repos\FunctionApp3\FunctionApp3\ServerlessLib\obj\Debug\net6.0\ref\ServerlessLib.dll
