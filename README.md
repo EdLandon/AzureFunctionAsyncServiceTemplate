@@ -60,3 +60,5 @@ There is an inbox queue and outbox queue (topic) for this service. Then there ar
     "http://localhost:7046/api/HTTPOrangesFuncRun" in the test web age index.html in the root of the project.
 6. Fire-up the test harness web page or use postman to send a request for apples. Put a breakpoint inside of (1) the applles func and then (2) the queue processing func.
 
+# Extension points - how to apply this to a real service
+...
