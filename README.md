@@ -1,7 +1,13 @@
 # Overview
+## Description
 A template for creating async services using Azure serverless functions and c# .NET. It is a queue rather than log-based implementation for buiding asynchronous services.
 
-This service template targets Azure HTTP-triggered functions for request ingress and Azure service bus queues and topics for async message processing. It includes a number of patterns:
+This service template targets Azure HTTP-triggered functions for request ingress and Azure service bus queues and topics for async message processing.
+
+In my last placement I created this as a visual studio template project in order to conform service implementation across teams. A community of best practice was formed, comprising lead engineers, in order to, among other things, improve and versin this visual studio project template.
+
+## Features
+This service template includes a number of patterns:
 1. The inbox/outbox service base pattern. This is a personal pattern and so is not in the public domain.
 2. An understanding of messages and how they sub-divide into commands and events.
 3. An understanding of Local, Private, Public messages.
@@ -14,6 +20,7 @@ Other technical features include:
 3. Base classes implementing GoF template method pattern for processing ingress requests (http) and queue processing.
 4. Transmitting and enforcing use of the FQEN and event short name. Populating the command/event "subject" property - useful for viewing in Azure Service Bus Event Explorer.
 
+## Caveat
 I am a "hands-on" development manager and this represents the patterns and practices I devised and enforced in my second project overseeing the implementatino of an event-based architecture.  I've not been a dev for some years now, so pls forgive any sub-optimal c# details. The objective of this is governance rather than coding minutae.
 
 # Messages, Commands, Events
