@@ -15,10 +15,19 @@ This service template targets Azure HTTP-triggered functions for request ingress
 - Integrated, not isolated.
 
 # To Run this Template
-1. Create service bus resource.
-2. Create queue ....
-3. Create topic ....
-4. Create subscription ....
+1. Create service bus resource and add the connection to the appsettings.local.json file:
+
+![alt text](https://github.com/EdLandon/DocMedia/blob/main/AzureFunctionAsyncServiceTemplate/appsettings.local.json.png)
+
+Then, referring to the settings in the above config file, create the following:
+
+2. Create service inbox queue "sbqService1_inbox_fruitToDo".
+3. Create service outbox topic.
+4. Create service outbox subscription "sbtService1_outbox_fruitDone".
+5. Running by default on localhost:7046. See http function URIs: 
+    "http://localhost:7046/api/HTTPApplesFuncRun"
+    "http://localhost:7046/api/HTTPOrangesFuncRun"
+
 
 # Governance
 ....
