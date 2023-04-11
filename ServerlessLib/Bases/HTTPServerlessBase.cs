@@ -21,7 +21,6 @@ namespace ServerlessLib
         public IActionResult ProcessRequest(HttpRequest req, string fqen, out ServiceBusMessage msg)
         {
             msg = null; _request = req; _fqen = fqen;
-
             try
             {
                 SetEventShortName();
@@ -33,7 +32,10 @@ namespace ServerlessLib
             catch (Exception ex)
             {
                 _log.LogError($"FQEN: {_fqen}, MsgId: {msg}, Topic: {_config.GetValue<string>("topic")}, Error: {ex.Message}.");
-                return new BadRequestObjectResult("Useful message here!"); // 400 bad request
+                if (ex is MBHttpException)
+                    return ((MBHttpException)ex).HttpResponse;
+                else
+                    return new BadRequestObjectResult("Useful message here!"); // 500 bad request
             }
             return new OkObjectResult($"Request payload {_deSerialisedModel.GetType().Name} successfully validated and queued.");
         }

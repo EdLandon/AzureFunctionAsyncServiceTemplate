@@ -13,6 +13,8 @@ This service template includes a number of patterns:
 3. An understanding of Local, Private, Public messages.
 4. Use of a fully-qualified event name (FQEN) and event short name.
 5. Capture and handling of transient exceptions and non-transient exceptions. Transient exceptions propogated up to the service bus for retry; non-transient exceptions explicity dead-lettered.
+6. Use of the Poly library for resiliency patterns.
+7. Custom exceptions to discriminate between sensitive internal-only error messages and safer version for external visibility.
 
 Other technical features include:
 1. Selection of appropriate non-default serverless function bindings in order to have full access to the underlying service bus - for explicit dead-lettering and also access to the message header, not just the payload.
