@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using ServerlessLib;
 
 namespace Service1
 {

@@ -1,13 +1,10 @@
 ﻿using AutoMapper;
 using Microsoft.Extensions.Configuration;
 using ServerlessLib;
-using System;
 using System.Net;
-using System.Net.Http;
 using System.Text.Json;
-using System.Threading.Tasks;
 
-namespace Service1
+namespace ServerlessLib
 {
     public class MBServiceBase
     {

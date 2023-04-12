@@ -84,6 +84,10 @@
               "target": "Package",
               "version": "[5.8.1, )"
             },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Microsoft.Extensions.Primitives": {
               "target": "Package",
               "version": "[7.0.0, )"
