@@ -46,7 +46,7 @@ namespace ServerlessLib
         private object ProcessMessage(ServiceBusReceivedMessage msg, string fqen)
         {
             QueuePayloadModelProcessor processor = ResolveNamedReg(fqen) as QueuePayloadModelProcessor;
-            return processor.Process(msg);
+            return processor.ProcessAsync(msg);
         }
 
         protected QueuePayloadModelProcessor ResolveNamedReg(string key)

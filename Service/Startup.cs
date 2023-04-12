@@ -98,6 +98,7 @@ namespace Service1
             builder
                 .RegisterType<OrangesProcessor>()
                 .Named<QueuePayloadModelProcessor>("Event_Domain1_Service1_DoOranges1_v1.0");
+            builder.RegisterType<Service1>().As<IService1>();
 
             var container = builder.Build();
             ContainerProvider.Container = container;

@@ -6,7 +6,7 @@ namespace ServiceLib
 {
     public abstract class QueuePayloadModelProcessor
     {
-        public abstract object Process(ServiceBusReceivedMessage msg);
+        public abstract object ProcessAsync(ServiceBusReceivedMessage msg);
 
         public void Validate(ServiceBusReceivedMessage msg)
         {

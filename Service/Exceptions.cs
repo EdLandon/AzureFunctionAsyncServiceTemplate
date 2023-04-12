@@ -5,12 +5,12 @@ using ServerlessLib;
 namespace Service1
 {
     // 400
-    public class SomeAppSpecificException: MBHttpException
+    public class SomeAppSoecificException : MBHttpException
     {
-        public SomeAppSpecificException(string message) :base(message, new BadRequestObjectResult(message) )
+        public SomeAppSoecificException(string message) :base(message, new BadRequestObjectResult(message) )
         {
         }
-        public SomeAppSpecificException(string internalMessage, string externalMessage) 
+        public SomeAppSoecificException(string internalMessage, string externalMessage) 
             : base(internalMessage, externalMessage, new BadRequestObjectResult(externalMessage))
         {
         }
