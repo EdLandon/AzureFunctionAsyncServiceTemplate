@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.Extensions.Configuration;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -19,5 +20,15 @@ namespace Service1
         {
             return $"https://someUrl/{query}";
         }
+        protected override async Task ProcessResponse(HttpResponseMessage response, string errMsg)
+        {
+            base.ProcessResponse(response, errMsg);
+            switch (response.StatusCode)
+            {
+                case HttpStatusCode.PaymentRequired:
+                    throw new SomeAppSoecificException(errMsg);
+            }
+        }
+
     }
 }

@@ -11,10 +11,10 @@ namespace Service1
 {
     public class MBServiceBase
     {
-        private IHttpClientFactory _httpClientFactory;
-        private IMapper _mapper;
-        private const string URL = "";
-        private IConfiguration _Configuration { get; set; }
+        protected IHttpClientFactory _httpClientFactory;
+        protected IMapper _mapper;
+        protected const string URL = "";
+        protected IConfiguration _Configuration { get; set; }
 
         public MBServiceBase(IHttpClientFactory httpClientFactory, IMapper mapper, IConfiguration config)
         {
@@ -66,7 +66,7 @@ namespace Service1
             }
             return retval;
         }
-        protected async Task ProcessResponse(HttpResponseMessage response, string errMsg)
+        protected virtual async Task ProcessResponse(HttpResponseMessage response, string errMsg)
         {
             switch (response.StatusCode)
             {
@@ -74,8 +74,6 @@ namespace Service1
                     throw new BadRequestException(errMsg);
                 case HttpStatusCode.Forbidden:
                     return;
-                case HttpStatusCode.PaymentRequired:
-                    throw new SomeAppSoecificException(errMsg);
                 case HttpStatusCode.NotFound:
                     throw new NotFoundException(errMsg);
                 case HttpStatusCode.InternalServerError:
