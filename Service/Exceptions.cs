@@ -5,12 +5,13 @@ using ServerlessLib;
 namespace Service1
 {
     // 400
-    public class LookupLimitReachedException: MBHttpException
+    public class SomeAppSpecificException: MBHttpException
     {
-        public LookupLimitReachedException(string message) :base(message, new BadRequestObjectResult(message) )
+        public SomeAppSpecificException(string message) :base(message, new BadRequestObjectResult(message) )
         {
         }
-        public LookupLimitReachedException(string internalMessage, string externalMessage) : base(internalMessage, externalMessage, new BadRequestObjectResult(externalMessage))
+        public SomeAppSpecificException(string internalMessage, string externalMessage) 
+            : base(internalMessage, externalMessage, new BadRequestObjectResult(externalMessage))
         {
         }
     }

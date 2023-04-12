@@ -27,7 +27,8 @@ namespace ServerlessLib
         public NotFoundException(string message) : base(message, new NotFoundObjectResult(message) )
         {
         }
-        public NotFoundException(string internalMessage, string externalMessage) : base(internalMessage, externalMessage, new NotFoundObjectResult(message) )
+        public NotFoundException(string internalMessage, string externalMessage) 
+            : base(internalMessage, externalMessage, new NotFoundObjectResult(externalMessage) )
         {
         }
 
@@ -37,7 +38,8 @@ namespace ServerlessLib
         public UnauthorisedException(string message) : base(message, new UnauthorizedObjectResult(message))
         {
         }
-        public UnauthorisedException(string internalMessage, string externalMessage) : base(internalMessage, externalMessage, new UnauthorisedException(externalMessage))
+        public UnauthorisedException(string internalMessage, string externalMessage) 
+            : base(internalMessage, externalMessage, new UnauthorizedObjectResult(externalMessage))
         {
         }
     }
@@ -47,7 +49,8 @@ namespace ServerlessLib
         public BadRequestException(string message) : base( message, new BadRequestObjectResult(message) )
         {
         }
-        public BadRequestException(string internalMessage, string externalMessage) : base(internalMessage, externalMessage, new BadRequestException(externalMessage))
+        public BadRequestException(string internalMessage, string externalMessage) 
+            : base(internalMessage, externalMessage, new BadRequestObjectResult(externalMessage))
         {
         }
     }
@@ -57,7 +60,8 @@ namespace ServerlessLib
         public ServerErrorException(string message) : base( message, new ExceptionResult(new Exception(message), true) )
         {
         }
-        public ServerErrorException(string internalMessage, string externalMessage) : base(internalMessage, externalMessage, new ExceptionResult(new Exception(message), true))
+        public ServerErrorException(string internalMessage, string externalMessage) 
+            : base(internalMessage, externalMessage, new ExceptionResult(new Exception(externalMessage), true))
         {
         }
     }

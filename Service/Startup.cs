@@ -2,10 +2,16 @@
 using Autofac.Extensions.DependencyInjection.AzureFunctions;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using ServerlessLib;
 using Service1;
 using ServiceLib;
 using System;
+
+using Microsoft.Extensions.Logging;
+using Polly;
+using Polly.Extensions.Http;
+using System.Net.Http;
 
 [assembly: FunctionsStartup(typeof(Startup))]
 
@@ -18,6 +24,26 @@ namespace Service1
             builder
                 // This is the required call in order to use autofac in your azure functions app
                 .UseAutofacServiceProviderFactory(ConfigureContainer);
+
+            builder.Services
+                .AddLogging()
+                .AddHttpClient("pollyClient").AddPolicyHandler(GetRetryPolicy());    // Here we are adding "named" http clients.  Because they are used in lots of examples, we may want to consider using <typed> clients. 
+
+        }
+        static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy()
+        {
+            return HttpPolicyExtensions
+                .HandleTransientHttpError()
+                .OrResult(msg => msg.StatusCode == System.Net.HttpStatusCode.NotFound)
+                .WaitAndRetryAsync(
+                    3,
+                    retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)),
+                    onRetry: (outcome, timespan, retryAttempt, context) =>
+                    {
+                        var log = context.GetLogger();
+                        log?.LogInformation($"Request failed with status code {outcome.Result.StatusCode} delaying for {timespan.TotalMilliseconds} milliseconds then making retry {retryAttempt}");
+                    }
+                );
         }
 
         public override void ConfigureAppConfiguration(IFunctionsConfigurationBuilder builder)
@@ -28,11 +54,11 @@ namespace Service1
 //            builder.UseAppSettings();
 
             var config = new ConfigurationBuilder()
-            .SetBasePath(Environment.CurrentDirectory)
-            .AddJsonFile("local.settings.json", optional: true, reloadOnChange: true)
-            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-            .AddEnvironmentVariables()
-            .Build();
+                .SetBasePath(Environment.CurrentDirectory)
+                .AddJsonFile("local.settings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddEnvironmentVariables()
+                .Build();
             builder.ConfigurationBuilder.AddConfiguration(config);
         }
 
