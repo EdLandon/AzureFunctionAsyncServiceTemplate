@@ -19,7 +19,11 @@ This service template includes a number of patterns:
 Other technical features include:
 1. Selection of appropriate non-default serverless function bindings in order to have full access to the underlying service bus - for explicit dead-lettering and also access to the message header, not just the payload.
 2. Use of custom IoC container (Autofac) for using "named registrations", which is a big feature missing from the built in .NET container.
-3. Base classes implementing GoF template method pattern for processing ingress requests (http) and queue processing.
+3. Base classes:
+    - implementing GoF template method pattern for processing ingress requests (http)
+    - queue processing
+    - calling services and deserialising returned JSON
+    - encapsulating and hiding the tech used to JSON (de)serialisation.
 4. Transmitting and enforcing use of the FQEN and event short name. Populating the command/event "subject" property - useful for viewing in Azure Service Bus Event Explorer.
 
 ## Caveat
