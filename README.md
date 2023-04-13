@@ -2,9 +2,7 @@
 ## Description
 A template for creating async services using Azure serverless functions and c# .NET. It is a queue rather than log-based implementation.
 
-This service template targets Azure HTTP-triggered functions for request ingress and Azure service bus queues and topics for async message processing.
-
-In my last placement I created this as a visual studio template project in order to conform service implementation across teams. A community of best practice was formed, comprising lead engineers, in order to, among other things, improve and version this visual studio project template.
+This service template targets Azure HTTP-triggered functions for request ingress and Azure service bus queues and topics for async message processing. I created this template in my last placement and converted it to a visual studio project template in order to conform service implementation across teams..
 
 ## Features
 This service template includes a number of patterns:
